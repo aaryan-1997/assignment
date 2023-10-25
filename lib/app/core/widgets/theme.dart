@@ -7,6 +7,12 @@ Color darkBlueColor = const Color(0xff2D4379);
 Color whiteColor = const Color(0xffffffff);
 Color redColor = const Color(0xffEB4C42);
 
+Color gray = const Color(0xff1E1F28);
+Color red = const Color(0xffEF3651);
+Color darkGrey = const Color(0xff2A2C36);
+Color lightGrey = const Color.fromARGB(255, 100, 106, 138);
+Color kindGray = const Color.fromARGB(255, 90, 94, 114);
+
 TextStyle blackTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w600,
   color: blackColor,

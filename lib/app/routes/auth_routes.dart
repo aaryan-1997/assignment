@@ -13,12 +13,12 @@ class AuthRoutes {
   static final routes = [
     GetPage(
       name: login,
-      page: () => const LoginPage(),
+      page: () =>  LoginPage(),
       binding: AuthBinding(),
     ),
     GetPage(
       name: signup,
-      page: () => const SignupPage(),
+      page: () =>  SignupPage(),
       binding: AuthBinding(),
     ),
   ];

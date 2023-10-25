@@ -1,3 +1,4 @@
+import 'package:assignment/app/routes/auth_routes.dart';
 import 'package:assignment/app/routes/home_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,7 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.offAllNamed(HomeRoutes.home);
+      Get.offAllNamed(AuthRoutes.login);
     });
     super.initState();
   }

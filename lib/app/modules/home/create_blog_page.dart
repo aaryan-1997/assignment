@@ -26,7 +26,9 @@ class _CreateBlogPageState extends State<CreateBlogPage> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.back();
+            },
             icon: Icon(
               Icons.chevron_left,
               color: darkBlueColor,
@@ -53,7 +55,7 @@ class _CreateBlogPageState extends State<CreateBlogPage> {
                         ),
                         const SizedBox(height: 12),
                         Text(
-                          "Create new blog",
+                          "Create New Blog",
                           style: regularTextStyle.copyWith(
                             fontSize: 14,
                           ),
