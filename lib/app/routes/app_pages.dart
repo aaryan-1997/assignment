@@ -4,7 +4,8 @@ import 'auth_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = '/home';
+  // ignore: constant_identifier_names
+  static const INITIAL = '/splash';
 
   static final routes = [
     ...HomeRoutes.routes,

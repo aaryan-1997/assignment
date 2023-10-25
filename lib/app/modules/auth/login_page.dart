@@ -10,12 +10,12 @@ class LoginPage extends GetView<AuthController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('AuthPage'),
+        title: const Text('Login Page'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'AuthPage is working',
+          'Login Page is working',
           style: TextStyle(fontSize: 20),
         ),
       ),
