@@ -26,18 +26,33 @@ class HomePage extends GetView<HomeController> {
                 child: ListView.builder(
                     itemCount: controller.blogList.length,
                     itemBuilder: (context, index) {
-                      return ListTile(
-                        title: Text(
-                          '${controller.blogList[index].title}',
-                          style: const TextStyle(fontSize: 16),
+                      return Card(
+                        child: ListTile(
+                          contentPadding: const EdgeInsets.all(8),
+                          title: Text(
+                            '${controller.blogList[index].title}',
+                            style: const TextStyle(fontSize: 16),
+                          ),
+                          subtitle: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                '${controller.blogList[index].description}',
+                                style: const TextStyle(fontSize: 14),
+                                maxLines: 2,
+                              ),
+                              const SizedBox(height: 5),
+                              Text(
+                                '${controller.blogList[index].createdAt}',
+                                style: const TextStyle(fontSize: 12),
+                              ),
+                            ],
+                          ),
+                          trailing: IconButton(
+                            onPressed: () {},
+                            icon: const Icon(Icons.edit),
+                          ),
                         ),
-                        subtitle: Text(
-                          '${controller.blogList[index].description}',
-                          style: const TextStyle(fontSize: 14),
-                          maxLines: 2,
-                        ),
-                        trailing: IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.edit)),
                       );
                     }),
               ),

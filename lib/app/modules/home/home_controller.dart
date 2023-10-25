@@ -26,6 +26,7 @@ class HomeController extends GetxController {
             'id': document.id,
             'title': result['title'],
             'description': result['description'],
+            'created_at': result['created_at'],
           });
           blogList.add(data);
         }
