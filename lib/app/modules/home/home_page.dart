@@ -1,6 +1,8 @@
+import 'package:assignment/app/modules/auth/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../routes/auth_routes.dart';
 import '../../routes/home_routes.dart';
 import 'home_controller.dart';
 
@@ -11,7 +13,13 @@ class HomePage extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Blogs'),
+        title: const Row(
+          children: [
+            Expanded(
+              child: Text('Blogs'),
+            ),
+          ],
+        ),
         centerTitle: true,
         elevation: 0,
       ),
@@ -67,5 +75,24 @@ class HomePage extends GetView<HomeController> {
         child: const Icon(Icons.add),
       ),
     );
+  }
+}
+
+class LogoutButton extends GetView<AuthController> {
+  const LogoutButton({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(() {
+      return GestureDetector(
+        onTap: () async {
+          await controller.logOut();
+          Get.offAllNamed(AuthRoutes.login);
+        },
+        child: const Icon(Icons.exit_to_app),
+      );
+    });
   }
 }

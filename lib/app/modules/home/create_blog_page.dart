@@ -137,7 +137,7 @@ class _CreateBlogPageState extends State<CreateBlogPage> {
                       'Post',
                       style: Theme.of(context)
                           .textTheme
-                          .headline5!
+                          .headlineSmall!
                           .copyWith(color: Colors.white),
                     ),
                   ),

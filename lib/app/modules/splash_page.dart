@@ -1,3 +1,4 @@
+import 'package:assignment/app/core/helpers/prefs.dart';
 import 'package:assignment/app/routes/auth_routes.dart';
 import 'package:assignment/app/routes/home_routes.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +14,13 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 3), () {
-      Get.offAllNamed(AuthRoutes.login);
+    Future.delayed(const Duration(seconds: 3), () async {
+      if (await PrefRepository().getToken() == null ||
+          await PrefRepository().getToken() == "") {
+        Get.offAllNamed(AuthRoutes.login);
+      } else {
+        Get.offAllNamed(HomeRoutes.home);
+      }
     });
     super.initState();
   }
@@ -23,7 +29,9 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: FlutterLogo(size: 100,),
+        child: FlutterLogo(
+          size: 100,
+        ),
       ),
     );
   }

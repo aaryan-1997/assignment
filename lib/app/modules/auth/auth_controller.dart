@@ -1,6 +1,7 @@
 import 'package:assignment/app/core/helpers/firebase_error.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../core/helpers/prefs.dart';
@@ -16,10 +17,9 @@ class AuthController extends GetxController {
       : _prefRepository = prefRepository ?? PrefRepository(),
         _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance;
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  RxBool showPassWord = true.obs;
+
+  Rx<GlobalKey<FormState>> formKey = GlobalKey<FormState>().obs;
 
   Future<RawData> logOut() async {
     try {
